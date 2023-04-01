@@ -3,7 +3,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
 
-
 ## About the project
 
 These project aim to be an achievable introduction to machine learning image classification algorithm using Tensorflow 2 for beginners. It's based on the Tensorflow documentation and bring more details concerning the installation on your local machine.
@@ -178,6 +177,30 @@ PS: If you're a Mackbook user, maybe it's time to change your computer 😉.
     ```bash
     python3.9 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
     ```
+
+&nbsp;
+
+## Usage
+
+### Trainning
+
+   ```bash
+    python3.9 model_training.py
+   ```
+
+### Inference
+
+   ```bash
+    python3.9 python3.9 model_inference.py
+   ```
+
+### Tips
+
+* [mnist_model.h5](mnist_model.h5) is the train model to format HDF5 format. You can export/import it where ever you want !
+* See [exomodel.py](exomodel.py) for more details about loading pre-train model
+* [hypertunning_logs](hypertunning_logs) directory is generated ONLY at the first train.
+* If you want to reset the hyperparameters search, you just need to remove [hypertunning_logs](hypertunning_logs) directory and restart training
+* Feel free to re-adjust the hypermodel as you whish
 
 &nbsp;
 
