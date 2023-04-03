@@ -191,7 +191,7 @@ PS: If you're a Mackbook user, maybe it's time to change your computer 😉.
 ### Inference
 
    ```bash
-    python3.9 python3.9 model_inference.py
+    python3.9 model_inference.py
    ```
 
 ### Tips

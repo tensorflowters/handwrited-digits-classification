@@ -52,7 +52,8 @@ class Model:
 
         # Train the model
         print('\nStarting training...')
-        model.fit(self.x_train, self.y_train, validation_data=(self.x_test, self.y_test), epochs=epochs)
+        stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
+        model.fit(self.x_train, self.y_train, validation_split=0.3, callbacks=[stop_early], epochs=epochs)
         print('\nTraining done !')
 
         # Save the model so he could be infer an unlimited amount of time without training again

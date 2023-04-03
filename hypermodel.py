@@ -112,7 +112,7 @@ class HyperModel:
         stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
         hyper_band = kt.Hyperband(model_builder, objective='val_accuracy', max_epochs=50, factor=3, directory='hypertunning_logs', project_name='hyperband_algo')
         # Run the hyperparameter search. The arguments for the search method are the same as those used for tf.keras.model.fit in addition to the callback above.
-        hyper_band.search(self.x_train, self.y_train, validation_data=(self.x_test, self.y_test), callbacks=[stop_early], epochs=self.max_epochs)
+        hyper_band.search(self.x_train, self.y_train, validation_split=0.3, callbacks=[stop_early], epochs=self.max_epochs)
         # Get the best results
         hyper_band.results_summary(1)
         # Get the best hyperparameters.
@@ -133,8 +133,8 @@ class HyperModel:
     def get_best_epoch(self):
         if (self.hypermodel):
             print('\nInitial training... Searching best number of epochs...')
-            initial_training = self.hypermodel.fit(self.x_train, self.y_train, validation_data=(
-                self.x_test, self.y_test), epochs=self.max_epochs)
+            stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
+            initial_training = self.hypermodel.fit(self.x_train, self.y_train, validation_split=0.3, callbacks=[stop_early], epochs=self.max_epochs)
             accurancy_per_epoch = initial_training.history['val_accuracy']
             best_epoch = accurancy_per_epoch.index(
                 max(accurancy_per_epoch)) + 1
