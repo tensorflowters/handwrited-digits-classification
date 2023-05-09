@@ -212,7 +212,8 @@ PS: If you're a Mackbook user, maybe it's time to change your computer 😉.
 
 ```text
 Using a separate dataset is essential to measure the performances of an algorithm 
-because it's allowing our model to avoid making predictions on memorized data. 
+because it's allowing our model to avoid making predictions on memorized data.
+
 The aim of a machine learning algorithm is to make accurate predictions on unseen 
 data and not only on know data.
 ```
@@ -222,19 +223,28 @@ data and not only on know data.
 ### What are your results when you test your algorithm on the same dataset used in training ?
 
 ```text
-Your results may be too good to be true. Since, your model has already seen this example, it might have memorized theme. 
+Your results may be too good to be true.
+Since, your model has already seen this example, it might have memorized theme. 
 
-This issue is known as overfitting. This when the algorithm perform well on training data but poorly on unseen ones. This can lead you to have a model with very limited practical use.
+This issue is known as overfitting.
+This when the algorithm perform well on training data but poorly on unseen ones.
+This can lead you to have a model with very limited practical use.
 
 To overcome this issue, it's common practice to split the available data into three separate sets:
+- Training set: This is the largest portion of the dataset, 
+  used to train the algorithm and adjust its parameters.
 
-- Training set: This is the largest portion of the dataset, used to train the algorithm and adjust its parameters.
+- Validation set: This set is used to tune hyperparameters, 
+  compare different models, and make decisions about the model architecture 
+  during the training process.
 
-- Validation set: This set is used to tune hyperparameters, compare different models, and make decisions about the model architecture during the training      process.
+- Test set: This set is used to evaluate the performance of the final algorithm. 
+  It should only be used once after the model has been fully trained and tuned, 
+  to provide an unbiased estimate of the algorithm's performance on new data.
 
-- Test set: This set is used to evaluate the performance of the final algorithm. It should only be used once after the model has been fully trained and tuned, to provide an unbiased estimate of the algorithm's performance on new data.
-
-By separating the data into different sets, you can ensure a more accurate and reliable estimation of your algorithm's performance and its ability to generalize to new, unseen data.
+By separating the data into different sets, you can ensure a more accurate and 
+reliable estimation of your algorithm's performance and its ability 
+to generalize to new, unseen data.
 ```
 
 &nbsp;
@@ -242,15 +252,31 @@ By separating the data into different sets, you can ensure a more accurate and r
 ### What are bias and variance ?
 
 ```text
-Bias and variance are two fundamental sources of error in machine learning models that help us understand the trade-off between model complexity and generalization.
+Bias and variance are two fundamental sources of error in machine learning models 
+that help us understand the trade-off between model complexity and generalization.
 
-Bias refers to the error introduced by approximating a real-world problem with a simplified model. It measures how far off the model's predictions are from the true values on average. A high bias means the model makes strong assumptions about the data and may not capture the underlying patterns, leading to underfitting. Underfitting occurs when the model is too simple and cannot accurately represent the complexity of the data.
+Bias refers to the error introduced by approximating a real-world problem with a simplified model. 
+It measures how far off the model's predictions are from the true values on average. 
+A high bias means the model makes strong assumptions about the data and 
+may not capture the underlying patterns, leading to underfitting. 
+Underfitting occurs when the model is too simple and cannot accurately represent the complexity of the data.
 
-Variance, on the other hand, refers to the error introduced by the model's sensitivity to small fluctuations in the training data. A high variance means the model is overly complex and tries to fit the noise in the training data, leading to overfitting. Overfitting occurs when the model learns not only the underlying patterns in the data but also the random noise, making it perform poorly on new, unseen data.
+Variance, on the other hand, refers to the error introduced 
+by the model's sensitivity to small fluctuations in the training data. 
+A high variance means the model is overly complex and tries to 
+fit the noise in the training data, leading to overfitting. 
+Overfitting occurs when the model learns not only the underlying patterns 
+in the data but also the random noise, making it perform poorly on new, unseen data.
 
-In general, there is a trade-off between bias and variance in machine learning models. If you increase the model's complexity to reduce bias, you are likely to increase its variance, making it more sensitive to noise in the data. Conversely, if you decrease the model's complexity to reduce variance, you are likely to increase its bias, making it less capable of capturing the true patterns in the data.
+In general, there is a trade-off between bias and variance in machine learning models.
+If you increase the model's complexity to reduce bias, 
+you are likely to increase its variance, making it more sensitive to noise in the data. 
+Conversely, if you decrease the model's complexity to reduce variance, 
+you are likely to increase its bias, making it less capable of capturing the true patterns in the data.
 
-The goal in machine learning is to find the right balance between bias and variance, which minimizes the total error and results in a model that generalizes well to new, unseen data. This is often achieved through techniques like regularization, cross-validation, and model selection.
+The goal in machine learning is to find the right balance between bias and variance, 
+which minimizes the total error and results in a model that generalizes well to new, unseen data. 
+This is often achieved through techniques like regularization, cross-validation, and model selection.
 ```
 
 &nbsp;
@@ -258,9 +284,20 @@ The goal in machine learning is to find the right balance between bias and varia
 ### What is cross validation ?
 
 ```text
-Cross-validation is a technique used in machine learning to evaluate the performance and generalization ability of a model by partitioning the available data into multiple folds and using these folds for both training and validation. The primary goal of cross-validation is to obtain a more accurate estimate of the model's performance on unseen data and help prevent overfitting.
+Cross-validation is a technique used in machine learning to evaluate 
+the performance and generalization ability of a model by partitioning 
+the available data into multiple folds and using these folds 
+for both training and validation.
+The primary goal of cross-validation is to obtain a more accurate 
+estimate of the model's performance on unseen data and help prevent 
+overfitting.
 
-The most common form of cross-validation is k-fold cross-validation. In k-fold cross-validation, the data is divided into k equally-sized folds. The model is trained and validated k times, each time using a different fold as the validation set and the remaining k-1 folds as the training set. The overall performance is then calculated by averaging the performance metrics across all k iterations.
+The most common form of cross-validation is k-fold cross-validation. 
+In k-fold cross-validation, the data is divided into k equally-sized folds. 
+The model is trained and validated k times, each time using a different 
+fold as the validation set and the remaining k-1 folds as the training set. 
+The overall performance is then calculated by averaging 
+the performance metrics across all k iterations.
 ```
 
 &nbsp;
@@ -268,11 +305,17 @@ The most common form of cross-validation is k-fold cross-validation. In k-fold c
 ### What are the main advantages ?
 
 ```text
-1. More reliable performance estimation: Cross-validation provides a more accurate and robust estimate of the model's performance on unseen data compared to a single train-test split, as it considers multiple training and validation sets.
+1. More reliable performance estimation: Cross-validation provides a more 
+accurate and robust estimate of the model's performance on unseen data 
+compared to a single train-test split, as it considers multiple training and validation sets.
 
-2. Reduced overfitting: By training and evaluating the model on different subsets of data, cross-validation helps to mitigate overfitting and ensure the model generalizes well to new data.
+2. Reduced overfitting: By training and evaluating the model on different 
+subsets of data, cross-validation helps to mitigate overfitting and ensure 
+the model generalizes well to new data.
 
-3. Model selection and hyperparameter tuning: Cross-validation can be used to compare the performance of different models or hyperparameter configurations, helping you select the best model or configuration for your problem.
+3. Model selection and hyperparameter tuning: Cross-validation can be used 
+to compare the performance of different models or hyperparameter configurations, 
+helping you select the best model or configuration for your problem.
 ```
 
 &nbsp;
@@ -280,13 +323,22 @@ The most common form of cross-validation is k-fold cross-validation. In k-fold c
 ### When can I use it ?
 
 ```text
-1. Limited data: Cross-validation is particularly useful when you have limited data, as it maximizes the use of available data for both training and validation.
+1. Limited data: Cross-validation is particularly useful 
+when you have limited data, as it maximizes the use of available data 
+for both training and validation.
 
-2. Model selection and hyperparameter tuning: Cross-validation can help you select the best model and hyperparameter configuration by comparing their performance across multiple folds.
+2. Model selection and hyperparameter tuning: 
+Cross-validation can help you select the best model and hyperparameter 
+configuration by comparing their performance across multiple folds.
 
-3. Ensuring generalization: Cross-validation helps ensure that your model generalizes well to new data by providing a more robust estimation of its performance.
+3. Ensuring generalization: Cross-validation helps ensure 
+that your model generalizes well to new data 
+by providing a more robust estimation of its performance.
 
-However, keep in mind that cross-validation can be computationally expensive, especially for large datasets or complex models, as it requires training and evaluating the model multiple times. In such cases, other techniques like hold-out validation or stratified sampling might be more appropriate.
+However, keep in mind that cross-validation can be
+computationally expensive, especially for large datasets or complex models, 
+as it requires training and evaluating the model multiple times. 
+In such cases, other techniques like hold-out validation or stratified sampling might be more appropriate.
 ```
 
 &nbsp;
@@ -294,9 +346,15 @@ However, keep in mind that cross-validation can be computationally expensive, es
 ### Can you explain why it’s important to normalize (scale) the data when using algos like KNN ?
 
 ```text
-Normalizing or scaling data is important when using algorithms like k-Nearest Neighbors (KNN) because these algorithms rely on distance metrics to determine the similarity between data points. When features have different scales or units, the distance metric can become dominated by the feature with the largest scale, causing the algorithm to perform poorly or give undue importance to certain features.
+Normalizing or scaling data is important when using algorithms like k-Nearest Neighbors (KNN) 
+because these algorithms rely on distance metrics to determine the similarity between data points. 
+When features have different scales or units, the distance metric can become dominated by the feature 
+with the largest scale, causing the algorithm to perform poorly or give undue importance to certain features.
 
-By normalizing or scaling the data, you ensure that all features contribute equally to the distance metric, improving the performance and interpretability of the algorithm. Common normalization techniques include min-max scaling, which scales features to a specific range (e.g., [0, 1]), and standardization, which centers the features around the mean with a standard deviation of 1.
+By normalizing or scaling the data, you ensure that all features contribute equally to the distance metric, 
+improving the performance and interpretability of the algorithm. Common normalization techniques 
+include min-max scaling, which scales features to a specific range (e.g., [0, 1]), and standardization, 
+which centers the features around the mean with a standard deviation of 1.
 ```
 
 &nbsp;
@@ -304,7 +362,9 @@ By normalizing or scaling the data, you ensure that all features contribute equa
 ### Is it necessary in our specific study case?
 
 ```text
-Normalization is still a good practice, but for slightly different reasons. The dataset consists of grayscale images of handwritten digits, where each pixel value ranges from 0 to 255. While all features (pixels) are on the same scale, normalizing the data can still provide benefits.
+Normalization is still a good practice, but for slightly different reasons. 
+The dataset consists of grayscale images of handwritten digits, 
+where each pixel value ranges from 0 to 255. While all features (pixels) are on the same scale, normalizing the data can still provide benefits.
 
 Normalization can help improve the performance and convergence speed of various machine learning algorithms, especially gradient-based optimization algorithms (such as those used in neural networks). Normalizing the pixel values to a smaller range, like [0, 1] or [-1, 1], can make the optimization process more stable, as gradients will be more consistent across different features.
 ```
@@ -372,21 +432,41 @@ Another useful metric for this scenario is the Area Under the Precision-Recall C
 ### Do confusion matrix display all informations of algorithms’ learning?
 
 ```text
-A confusion matrix is a useful tool for visualizing the performance of a classification algorithm, as it provides a summary of the true positive, true negative, false positive, and false negative predictions made by the model. However, it does not display all the information about the algorithm's learning process.
+A confusion matrix is a useful tool for visualizing the performance of a 
+classification algorithm, as it provides a summary of the true positive, 
+true negative, false positive, and false negative predictions made by the model. 
+However, it does not display all the information about the algorithm's learning process.
 
-The confusion matrix focuses on the classification results and provides insights into the types of errors made by the model. It allows you to calculate various performance metrics like accuracy, precision, recall, and F1-score. While these metrics help evaluate the performance of the model, they do not provide complete information about the algorithm's learning process.
+The confusion matrix focuses on the classification results and provides insights 
+into the types of errors made by the model. It allows you to calculate various 
+performance metrics like accuracy, precision, recall, and F1-score. 
+While these metrics help evaluate the performance of the model, 
+they do not provide complete information about the algorithm's learning process.
 
 Information not captured by the confusion matrix includes:
 
-1. Model architecture and parameters: The confusion matrix does not provide any details about the model's structure, complexity, or the specific parameters used during training.
+1. Model architecture and parameters: The confusion matrix does 
+not provide any details about the model's structure, complexity, 
+or the specific parameters used during training.
 
-2. Training process and convergence: The confusion matrix does not give information about the training process, such as the number of iterations, learning rate, or how well the model has converged during training.
+2. Training process and convergence: The confusion matrix
+does not give information about the training process, 
+such as the number of iterations, learning rate, 
+or how well the model has converged during training.
 
-3. Feature importance: The confusion matrix does not show which features are the most important for making accurate predictions or how they contribute to the model's decisions.
+3. Feature importance: The confusion matrix does not show which 
+features are the most important for making accurate predictions 
+or how they contribute to the model's decisions.
 
-4. Probabilistic outputs: For probabilistic classifiers, the confusion matrix does not display the predicted probabilities for each class, which can provide more granular information about the model's confidence in its predictions.
+4. Probabilistic outputs: For probabilistic classifiers, 
+the confusion matrix does not display the predicted probabilities
+for each class, which can provide more granular information 
+about the model's confidence in its predictions.
 
-5. Overfitting or underfitting: While the confusion matrix can help identify poor classification performance, it does not directly indicate whether the model is overfitting or underfitting the data.
+5. Overfitting or underfitting: While the confusion matrix 
+can help identify poor classification performance, 
+it does not directly indicate whether the model is overfitting or 
+underfitting the data.
 ```
 
 &nbsp;
@@ -394,27 +474,43 @@ Information not captured by the confusion matrix includes:
 ### Do you want to have a walk in the forest and observe tree growth ?
 
 ```text
-Random Forest is an ensemble learning method used for both classification and regression tasks. It works by constructing multiple decision trees during the training phase and aggregating their predictions to produce a more accurate and robust final output.
+Random Forest is an ensemble learning method used for both classification and regression tasks. 
+It works by constructing multiple decision trees during the training phase 
+and aggregating their predictions to produce a more accurate and robust final output.
 
-The main idea behind the Random Forest algorithm is to leverage the power of multiple weak learners (decision trees) to create a strong learner. Here are the key steps in the Random Forest algorithm:
+The main idea behind the Random Forest algorithm is to leverage 
+the power of multiple weak learners (decision trees) to create a 
+strong learner. Here are the key steps in the Random Forest algorithm:
 
-1. Select a random subset of the training data (with replacement) for each tree. This process is called bootstrapping.
+1. Select a random subset of the training data (with replacement) for each tree.
+This process is called bootstrapping.
 
-2. For each tree, grow the decision tree using the selected subset of data. During the tree construction, at each node, a random subset of features is selected to determine the best split. This introduces randomness and diversity into the tree growth process.
+2. For each tree, grow the decision tree using the selected subset of data. 
+During the tree construction, at each node, a random subset of features is selected to determine the best split. 
+This introduces randomness and diversity into the tree growth process.
 
 3. Repeat steps 1 and 2 for a specified number of trees, creating an ensemble of decision trees.
 
-4. To make predictions, pass the input data through each tree in the ensemble. For classification tasks, the final output is the class that receives the majority vote from all trees. For regression tasks, the final output is the average of the predictions made by all trees.
+4. To make predictions, pass the input data through each tree in the ensemble. 
+For classification tasks, the final output is the class that receives the majority vote from all trees. 
+For regression tasks, the final output is the average of the predictions made by all trees.
 
 The Random Forest algorithm has several advantages, including:
 
-1. Improved accuracy and robustness: By averaging the predictions of multiple decision trees, the Random Forest algorithm reduces the risk of overfitting and improves generalization performance.
+1. Improved accuracy and robustness: By averaging the predictions of multiple decision trees, 
+the Random Forest algorithm reduces the risk of overfitting and improves generalization performance.
 
-2. Handling missing values: Random Forest can handle missing data by considering only the available features for determining the best split at each node.
+2. Handling missing values: Random Forest can handle missing data 
+by considering only the available features for determining the best split at each node.
 
-3. Feature importance: The algorithm can provide an estimate of feature importance by calculating the average reduction in impurity (e.g., Gini impurity or information gain) contributed by each feature across all trees.
+3. Feature importance: The algorithm can provide an estimate of feature 
+importance by calculating the average reduction in impurity (e.g., 
+Gini impurity or information gain) contributed by each feature across all trees.
 
-However, Random Forests can be computationally expensive, particularly when dealing with large datasets or a large number of trees. Despite this limitation, they are widely used in machine learning due to their accuracy, versatility, and robustness.
+However, Random Forests can be computationally expensive, particularly
+when dealing with large datasets or a large number of trees. 
+Despite this limitation, they are widely used in machine learning 
+due to their accuracy, versatility, and robustness.
 ```
 
 &nbsp;
