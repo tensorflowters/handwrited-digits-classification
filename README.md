@@ -211,7 +211,10 @@ PS: If you're a Mackbook user, maybe it's time to change your computer 😉.
 ### Why use a separate dataset to measure the performance of an algorithm ?
 
 ```text
-Using a separate dataset is essential to measure the performances of an algorithm because it's allowing our model to avoid making predictions on memorized data. The aim of a machine learning algorithm is to make accurate predictions on unseen data and not only on know data.
+Using a separate dataset is essential to measure the performances of an algorithm 
+because it's allowing our model to avoid making predictions on memorized data. 
+The aim of a machine learning algorithm is to make accurate predictions on unseen 
+data and not only on know data.
 ```
 
 &nbsp;
